@@ -16,6 +16,7 @@
         /* This is A11y Change*/
          footer { background-color: #7c4b4b; }
        </style>
+
 </head>
 <body>
 
@@ -134,6 +135,8 @@
                             '#ff6384',
                             '#36a2eb',
                             '#fd6b19',
+                            '#cd1b8c',
+                            
                         ]
                     }
                 ],
@@ -154,7 +157,7 @@
                 for (var i = 0; i < res.data.myBudget.length; i++) {
                     dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
                     dataSource.labels[i] = res.data.myBudget[i].title;
-                   
+                 
                 }
                 createChart();
             });
