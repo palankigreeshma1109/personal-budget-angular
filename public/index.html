@@ -15,6 +15,7 @@
         i { color: #cd1b8c; } 
         /* This is A11y Change*/
          footer { background-color: #7c4b4b; }
+
        </style>
 
 </head>
@@ -136,6 +137,9 @@
                             '#36a2eb',
                             '#fd6b19',
                             '#cd1b8c',
+                            '#000066',
+                            '#660066',
+                            '#800000',
                             
                         ]
                     }
@@ -152,7 +156,7 @@
         }
 
         function getBudget() {
-            axios.get('http://localhost:3000/budget')
+            axios.get('/budget')
             .then(function (res) {
                 for (var i = 0; i < res.data.myBudget.length; i++) {
                     dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
