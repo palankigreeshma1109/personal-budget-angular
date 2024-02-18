@@ -6,6 +6,9 @@ const app = express();
 const budget =require("./data.json");
 const port = 3000;
 
+const cors = require('cors');
+app.use(cors())
+
 app.use("/",express.static("public"));
 
 
