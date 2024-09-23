@@ -24,17 +24,18 @@ export class DataService {
         ],
         labels: [],
     };;
-    
-    constructor(private http: HttpClient) { 
+
+    constructor(private http: HttpClient) {
         this.getData();
     }
 
+
     isEmpty(val:any){
-        return (val === undefined || val == null || val.length <= 0) ? true : false;
+        return (val === undefined || val == null  || val.length <= 0) ? true : false;
       }
 
     getData(){
-        if (this.isEmpty(this.dataSource.datasets[0].data)|| this.isEmpty(this.dataSource.labels)){
+        if ( this.isEmpty(this.dataSource.datasets[0].data)|| this.isEmpty(this.dataSource.labels)){
             this.http.get('http://localhost:3000' + '/budget').subscribe((res: any) => {
                 console.log('server res', res);
                 for (let i = 0; i < res.myBudget.length; i++) {
